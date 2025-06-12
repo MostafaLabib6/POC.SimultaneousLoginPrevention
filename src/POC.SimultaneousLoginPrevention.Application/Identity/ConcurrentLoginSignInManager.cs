@@ -23,8 +23,12 @@ public class ConcurrentLoginSignInManager : AbpSignInManager
     }
     public override async Task<SignInResult> PasswordSignInAsync(IdentityUser user, string password, bool isPersistent, bool lockoutOnFailure)
     {
-        user.SetProperty(SimultaniousLoginConsts.ConcurrentLoginToken, Guid.NewGuid().ToString("N"));
-        await UserManager.UpdateAsync(user);
+        var success = await UserManager.CheckPasswordAsync(user,password);
+        if (success)
+        {
+            user.SetProperty(SimultaniousLoginConsts.ConcurrentLoginToken, Guid.NewGuid().ToString("N"));
+            await UserManager.UpdateAsync(user);
+        }
         return await base.PasswordSignInAsync(user, password, isPersistent, lockoutOnFailure);
     }
 
