@@ -1,0 +1,22 @@
+﻿{
+  "applications": {
+    "OCR.SimultaniousLogin.HttpApi.Host": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44307",
+      "path": "../../../src/OCR.SimultaniousLogin.HttpApi.Host/OCR.SimultaniousLogin.HttpApi.Host.csproj",
+      "kubernetesService": ".*-httpapihost$",
+      "execution": {
+        "order": 4
+      }
+    },
+    "OCR.SimultaniousLogin.Blazor": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44340",
+      "path": "../../../src/OCR.SimultaniousLogin.Blazor/OCR.SimultaniousLogin.Blazor.csproj",
+      "kubernetesService": ".*-blazor$",
+      "execution": {
+        "order": 2
+      }
+    }
+  }
+}

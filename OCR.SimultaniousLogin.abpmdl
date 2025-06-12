@@ -1,0 +1,109 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.0.5",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "OCR.SimultaniousLogin.Application": {
+      "path": "src/OCR.SimultaniousLogin.Application/OCR.SimultaniousLogin.Application.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.Application.Tests": {
+      "path": "test/OCR.SimultaniousLogin.Application.Tests/OCR.SimultaniousLogin.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "OCR.SimultaniousLogin.Domain.Shared": {
+      "path": "src/OCR.SimultaniousLogin.Domain.Shared/OCR.SimultaniousLogin.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.Application.Contracts": {
+      "path": "src/OCR.SimultaniousLogin.Application.Contracts/OCR.SimultaniousLogin.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.HttpApi": {
+      "path": "src/OCR.SimultaniousLogin.HttpApi/OCR.SimultaniousLogin.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.HttpApi.Client": {
+      "path": "src/OCR.SimultaniousLogin.HttpApi.Client/OCR.SimultaniousLogin.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.EntityFrameworkCore.Tests": {
+      "path": "test/OCR.SimultaniousLogin.EntityFrameworkCore.Tests/OCR.SimultaniousLogin.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "OCR.SimultaniousLogin.EntityFrameworkCore": {
+      "path": "src/OCR.SimultaniousLogin.EntityFrameworkCore/OCR.SimultaniousLogin.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.TestBase": {
+      "path": "test/OCR.SimultaniousLogin.TestBase/OCR.SimultaniousLogin.TestBase.abppkg",
+      "folder": "test"
+    },
+    "OCR.SimultaniousLogin.Domain.Tests": {
+      "path": "test/OCR.SimultaniousLogin.Domain.Tests/OCR.SimultaniousLogin.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "OCR.SimultaniousLogin.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/OCR.SimultaniousLogin.HttpApi.Client.ConsoleTestApp/OCR.SimultaniousLogin.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "OCR.SimultaniousLogin.DbMigrator": {
+      "path": "src/OCR.SimultaniousLogin.DbMigrator/OCR.SimultaniousLogin.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.HttpApi.Host": {
+      "path": "src/OCR.SimultaniousLogin.HttpApi.Host/OCR.SimultaniousLogin.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.Blazor": {
+      "path": "src/OCR.SimultaniousLogin.Blazor/OCR.SimultaniousLogin.Blazor.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.Blazor.Client": {
+      "path": "src/OCR.SimultaniousLogin.Blazor.Client/OCR.SimultaniousLogin.Blazor.Client.abppkg",
+      "folder": "src"
+    },
+    "OCR.SimultaniousLogin.Domain": {
+      "path": "src/OCR.SimultaniousLogin.Domain/OCR.SimultaniousLogin.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
