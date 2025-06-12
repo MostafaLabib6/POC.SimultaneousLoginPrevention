@@ -45,6 +45,7 @@ using Volo.Abp.IdentityServer.Jwt;
 using ConcurrentLogin;
 using Volo.Abp.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OCR.SimultaniousLogin.Extensions;
 
 namespace OCR.SimultaniousLogin;
 
@@ -253,59 +254,7 @@ public class SimultaniousLoginHttpApiHostModule : AbpModule
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
-        app.Use(async (httpContext, next) =>
-        {
-
-            var currentUser = httpContext.RequestServices.GetRequiredService<ICurrentUser>();
-
-            if (currentUser.IsAuthenticated)
-
-            {
-
-                var claimToken = currentUser.GetConcurrentLoginToken();
-
-                var userManager = httpContext.RequestServices.GetRequiredService<IdentityUserManager>();
-
-                var user = await userManager.FindByIdAsync(currentUser.Id.ToString());
-
-                if (claimToken != user.GetProperty(SimultaniousLoginConsts.ConcurrentLoginToken).ToString())
-
-                {
-
-                    //Cookies
-
-                    if (httpContext.User.Identity != null && httpContext.User.Identity.AuthenticationType == "Identity.Application")
-
-                    {
-
-                        await httpContext.RequestServices.GetRequiredService<AbpSignInManager>().SignOutAsync();
-
-                        await httpContext.ChallengeAsync("Identity.Application");
-
-                    }
-
-                    //JWT
-
-                    if (httpContext.User.Identity != null && httpContext.User.Identity.AuthenticationType == "AuthenticationTypes.Federation")
-
-                    {
-
-                        await httpContext.ChallengeAsync(JwtBearerDefaults.AuthenticationScheme);
-
-                    }
-
-                    //Other
-
-                    return;
-
-                }
-
-            }
-
-            await next();
-
-        });
-
+        app.UseConcurrentLoginValidation();
         app.UseAbpOpenIddictValidation();
 
         if (MultiTenancyConsts.IsEnabled)

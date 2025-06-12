@@ -1,6 +1,4 @@
-﻿using ConcurrentLogin.AspNetIdentity;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using OCR.SimultaniousLogin.MultiTenancy;
 using Volo.Abp.AuditLogging;
